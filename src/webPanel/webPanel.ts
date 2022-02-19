@@ -10,6 +10,8 @@ export function startWebPanel() {
     app.post('/', (req, res) => {
         if (req.body.action == (undefined || null)) return;
         res.header('X-Powered-By', 'LvckyWorld.net');
+        if (req.headers['verify'] != webPanelConfig.verifyHeader) return res.sendStatus(403);
+        
         if (req.body.action == 'changeusername') {
             changeUserNameHandler.changeUserName(req, res);
         }
