@@ -7,7 +7,7 @@ export function autoEmbed(message: Discord.Message) {
         if (channelID.startsWith("vote_")) {
             let rightChannelID = channelID.replace("vote_", "");
             if (rightChannelID === message.channel.id) {
-                message.channel.send({embeds: [embedHandler.announceEmbed("📢 Umfrage 📢", message.content, "RANDOM", message)]}).then(msg => {msg.react("✅"); msg.react("❌");});
+                message.channel.send({embeds: [embedHandler.voteEmbed("📢 Umfrage 📢", message.content, "RANDOM", message)]}).then(msg => {msg.react("✅"); msg.react("❌");});
                 message.delete();
             }
         } else {

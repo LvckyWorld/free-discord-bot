@@ -80,7 +80,7 @@ export function announceEmbed(title: string, description: string, color: ColorRe
         .setColor(color)
         .setTitle(title)
         .setDescription(description)
-        .setAuthor({ name: `Request by: ${message.author.username}`, iconURL: (message.author.avatarURL({ dynamic: true }) || botconf.standartPicURL), url: `https://discordapp.com/users/${message.author.id}` })
+        .setAuthor({ name: `Announce by: ${message.author.username}`, iconURL: (message.author.avatarURL({ dynamic: true }) || botconf.standartPicURL), url: `https://discordapp.com/users/${message.author.id}` })
         .setFooter({ text: ebFooter, iconURL: (picURL || botconf.standartPicURL) })
         .setTimestamp(new Date())
         .setThumbnail(picURL || botconf.standartPicURL);
@@ -94,7 +94,7 @@ export function voteEmbed(title: string, description: string, color: ColorResolv
         .setColor(color)
         .setTitle(title)
         .setDescription(description)
-        .setAuthor({ name: `Request by: ${message.author.username}`, iconURL: (message.author.avatarURL({ dynamic: true }) || botconf.standartPicURL), url: `https://discordapp.com/users/${message.author.id}` })
+        .setAuthor({ name: `Voting by: ${message.author.username}`, iconURL: (message.author.avatarURL({ dynamic: true }) || botconf.standartPicURL), url: `https://discordapp.com/users/${message.author.id}` })
         .setFooter({ text: ebFooter, iconURL: (picURL || botconf.standartPicURL) })
         .setTimestamp(new Date())
         .setThumbnail(picURL || botconf.standartPicURL);
