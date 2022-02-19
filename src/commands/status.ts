@@ -12,6 +12,9 @@ export async function execute(message: Discord.Message, bot: Discord.Client) {
 
         const endTime = moment(new Date().getTime());
         const duration = moment.duration(endTime.diff(processStartTime));
-        message.channel.send({embeds: [embedHandler.standardEmbed("🔥 Status 🔥", `Memory used: ${usedMemory} / ${totalMemory} MB\nProcess: ${ Math.round(duration.asDays()) }d ${ Math.round(duration.asHours()) }h ${ Math.round(duration.asMinutes())}m ${ Math.round(duration.asSeconds())}s`, 'RANDOM', message)]});
+        message.channel.send({embeds: [embedHandler.standardEmbed("🔥 Status 🔥", 
+        `Memory used: ${usedMemory} / ${totalMemory} MB
+        Process Duration: ${ Math.round(duration.asSeconds())}s`, 
+        'RANDOM', message)]});
     }
 }
