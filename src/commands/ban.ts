@@ -6,7 +6,7 @@ export async function execute(message: Discord.Message, args: string[], bot: Dis
     if (message.member?.permissions.has("BAN_MEMBERS")) {
 
         var mentionedUser = message.mentions.members?.first();
-        var id: Discord.UserResolvable | Discord.FetchMemberOptions | (Discord.FetchMembersOptions & { user: Discord.UserResolvable; });
+        var id: any = null;
 
         if (!(args.length >= 1)) return message.reply({
             embeds: [embedHandler.syntaxError(
@@ -32,7 +32,7 @@ export async function execute(message: Discord.Message, args: string[], bot: Dis
             for (var i = 1; i < args.length; i++) {
                 msg = msg + args[i] + " ";
             }
-        } else if (args.length == 0) {
+        } else if (msg == null || msg == undefined) {
             msg = "No reason defined.";
         }
 
@@ -49,23 +49,30 @@ export async function execute(message: Discord.Message, args: string[], bot: Dis
             }).catch((err) => { })
         }).catch((err) => { })
 
-        message.guild?.members.ban(id, { reason: `Ban by ${message.author.username} Reason: ${msg}` }).then((() => {
-            message.reply({
-                embeds: [embedHandler.standardEmbed(
-                    '💥 BAN-SYSTEM 💥',
-                    `A User was banned succsessfully.\n\n ClientID: ${id}\nMention: <@${id}>\nReason: \`${msg}\``,
-                    'GREEN',
-                    message
-                )]
-            })
-        })).catch((err) => {
-            message.reply({
-                embeds: [embedHandler.error(
-                    `Can't ban this User\n\n ||\`${err}\`||`,
-                    message
-                )]
-            })
+        message.reply(`Please wait 5 Seconds!`).then((msg) => {
+            setTimeout(() => { if (msg.deletable) { msg.delete() } }, 1000 * 4)
         })
+
+        setTimeout(() => {
+
+            message.guild?.members.ban(id, { reason: `Ban by ${message.author.username} Reason: ${msg}` }).then((() => {
+                message.reply({
+                    embeds: [embedHandler.standardEmbed(
+                        '💥 BAN-SYSTEM 💥',
+                        `A User was banned succsessfully.\n\n ClientID: ${id}\nMention: <@${id}>\nReason: \`${msg}\``,
+                        'GREEN',
+                        message
+                    )]
+                })
+            })).catch((err) => {
+                message.reply({
+                    embeds: [embedHandler.error(
+                        `Can't ban this User\n\n ||\`${err}\`||`,
+                        message
+                    )]
+                })
+            })
+        }, 1000 * 5)
 
 
 
