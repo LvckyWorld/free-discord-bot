@@ -28,12 +28,12 @@ export async function execute(message: Discord.Message, args: string[], bot: Dis
         }
 
         var msg = "";
-        if (args.length >= 1) {
+        if (args.length < 2) {
+            msg = "No reason defined.";
+        } else if (args.length >= 1) {
             for (var i = 1; i < args.length; i++) {
                 msg = msg + args[i] + " ";
             }
-        } else if (msg == null || msg == undefined) {
-            msg = "No reason defined.";
         }
 
 

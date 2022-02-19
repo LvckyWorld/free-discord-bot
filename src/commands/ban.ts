@@ -28,13 +28,15 @@ export async function execute(message: Discord.Message, args: string[], bot: Dis
         }
 
         var msg = "";
-        if (args.length >= 1) {
+        if (args.length < 2) {
+            msg = "No reason defined.";
+        } else if (args.length >= 1) {
             for (var i = 1; i < args.length; i++) {
                 msg = msg + args[i] + " ";
             }
-        } else if (msg == null || msg == undefined) {
-            msg = "No reason defined.";
         }
+
+
 
 
         // send DM to banned Player
@@ -42,7 +44,7 @@ export async function execute(message: Discord.Message, args: string[], bot: Dis
             member.send({
                 embeds: [embedHandler.standardEmbed(
                     '💥 BAN-SYSTEM 💥',
-                    `Your banned from the Server ${message.guild?.name}\n\n Reason: ${msg}`,
+                    `Your banned from the Server ${message.guild?.name}\n\n Reason: \`${msg}\``,
                     'RED',
                     message
                 )]
