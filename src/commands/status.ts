@@ -5,7 +5,7 @@ import { processStartTime } from '../index';
 import * as moment from 'moment';
 
 export async function execute(message: Discord.Message, bot: Discord.Client) {
-    if (message.author.id === ('447285957004099584' || '466986428107063306')) {
+    if (message.member?.permissions.has("ADMINISTRATOR")) {
 
         const usedMemory = (Math.round(process.memoryUsage().heapUsed / 1024 / 1024) * 100) / 100;
         const totalMemory = (Math.round(os.totalmem() / 1024 / 1024) * 100) / 100;
