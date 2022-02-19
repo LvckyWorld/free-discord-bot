@@ -1,4 +1,5 @@
 import * as Discord from 'discord.js';
+import 'dotenv/config';
 export const bot = new Discord.Client({
   intents: [
     Discord.Intents.FLAGS.GUILDS,
