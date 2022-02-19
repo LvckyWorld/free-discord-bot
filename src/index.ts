@@ -24,8 +24,8 @@ import * as fs from 'fs';
 import * as moment from 'moment';
 export const processStartTime = moment(new Date().getTime());
 import * as autoEmbedHandler from './autoembed/autoEmbed';
-
 import * as welcomeLeaveManager from './welcomeLeaveMessage/welcomeLeaveMessage';
+import * as webPanel from './webPanel/webPanel';
 // CMD,  FILE
 let commandMap = new Map<string, any>();
 
@@ -61,6 +61,7 @@ bot.on('guildMemberRemove', (member) => {
 
 bot.on('ready', () => {
     console.log('Bot logged in sucsessfully as ' + bot.user?.username + bot.user?.discriminator);
+    webPanel.startWebPanel();
 })
 
 bot.login(process.env.BOT_TOKEN);
