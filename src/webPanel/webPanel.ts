@@ -56,7 +56,6 @@ export function startWebPanel() {
     });
     app.get("/admins", (req, res) => {
         fs.readFile(__dirname + '/admins.json', (err, data) => {
-            console.log(err)
             if (err) return;
             res.header('X-Powered-By', 'LvckyWorld.net');
             res.send(data);
