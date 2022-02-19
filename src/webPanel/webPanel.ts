@@ -7,7 +7,6 @@ const app = express();
 app.use(express.urlencoded( { extended: true } ));
 
 let ipArray: string[] = [];
-let bannedIPs: string[] = [];
 export function startWebPanel() {
     app.post('/', (req, res) => {
         res.header('X-Powered-By', 'LvckyWorld.net');
