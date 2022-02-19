@@ -47,7 +47,11 @@ bot.on('messageCreate', (message) => {
     autoEmbedHandler.autoEmbed(message);
     commandMap.forEach((commandFile, commandName) => {
         if (message.content.startsWith(`${botconfig.prefix + commandName}`)) {
-            commandFile.execute(message, bot);
+            let messageArray = message.content.split(" ");
+            let cmd = messageArray[0].toLowerCase();
+            let args = messageArray.slice(1);
+            
+            commandFile.execute(message, args, bot);
         }
     });
 
