@@ -1,0 +1,18 @@
+{
+    "welcome": {
+        "enabled": true,
+        "channel": "789163616086917167",
+        "embed": {
+            "title": "Welcome to $server!",
+            "description": "Please read the rules and have fun! $mention $username"
+        }
+    },
+    "leave": {
+        "enabled": true,
+        "channel": "789163616086917168",
+        "embed": {
+            "title": "Good bye $mention!",
+            "description": "We hope you enjoyed your stay here! $mention $username"
+        }
+    }
+}

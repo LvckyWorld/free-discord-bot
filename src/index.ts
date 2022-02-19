@@ -24,6 +24,7 @@ import * as fs from 'fs';
 import * as moment from 'moment';
 export const processStartTime = moment(new Date().getTime());
 import * as autoEmbedHandler from './autoembed/autoEmbed';
+import * as welcomeLeaveManager from './welcomeLeaveMessage/welcomeLeaveMessage';
                         // CMD,  FILE
 let commandMap = new Map<string, any>();
 
@@ -49,6 +50,12 @@ bot.on('messageCreate', (message) => {
         }
     });
 
+});
+bot.on('guildMemberAdd', (member) => {
+    welcomeLeaveManager.welcomeMessage(member);
+})
+bot.on('guildMemberRemove', (member) => {
+    welcomeLeaveManager.leaveMessage(member);
 });
 
 bot.on('ready', () => {
