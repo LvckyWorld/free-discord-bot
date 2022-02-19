@@ -70,6 +70,11 @@ export async function execute(message: Discord.Message, args: string[], bot: Dis
 
 
     } else
-        return embedHandler.noPerms('BAN_MEMBERS', message);
+        return message.reply({
+            embeds: [
+                embedHandler.noPerms('BAN_MEMBERS', message)
+            ]
+        })
+
 
 }
