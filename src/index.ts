@@ -64,7 +64,7 @@ bot.on('guildMemberRemove', (member) => {
 });
 
 bot.on('ready', () => {
-    console.log('Bot logged in sucsessfully as ' + bot.user?.username + bot.user?.discriminator);
+    console.log('Bot logged in sucsessfully as ' + bot.user?.username + '#' +  bot.user?.discriminator);
     webPanel.startWebPanel();
 })
 
