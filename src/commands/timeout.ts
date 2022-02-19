@@ -57,13 +57,14 @@ export async function execute(message: Discord.Message, args: string[], bot: Dis
                         )]
                     })
                 })
-            }).catch((err) => { })
+            })
+        }).catch((err) => { })
 
 
-        } else
+    } else
         return message.reply({
             embeds: [
                 embedHandler.noPerms('MODERATE_MEMBERS', message)
             ]
         })
-    }
+}
