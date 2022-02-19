@@ -49,8 +49,8 @@ export async function execute(message: Discord.Message, args: string[], bot: Dis
             }).catch((err) => { })
         }).catch((err) => { })
 
-        message.reply(`Please wait 5 Seconds!`).then((msg) => {
-            setTimeout(() => { if (msg.deletable) { msg.delete() } }, 1000 * 4)
+        message.reply(`Please wait 3 Seconds!`).then((msg) => {
+            setTimeout(() => { if (msg.deletable) { msg.delete() } }, 1000 * 2)
         })
 
         setTimeout(() => {
@@ -72,7 +72,7 @@ export async function execute(message: Discord.Message, args: string[], bot: Dis
                     )]
                 })
             })
-        }, 1000 * 5)
+        }, 1000 * 3)
 
 
 
