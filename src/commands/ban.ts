@@ -5,7 +5,7 @@ export async function execute(message: Discord.Message, args: string[], bot: Dis
 
     if (message.member?.permissions.has("BAN_MEMBERS")) {
 
-        var mentionedUser: Discord.MemberMention = message.mentions.members?.first();
+        var mentionedUser = message.mentions.members?.first();
 
         var msg = "";
         if (args.length >= 1) {
@@ -16,8 +16,8 @@ export async function execute(message: Discord.Message, args: string[], bot: Dis
             msg = "kein Grund angegeben.";
         }
 
-        if (men) {
-
+        if (mentionedUser?.bannable) {
+            
         }
 
     } else
