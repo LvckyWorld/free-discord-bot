@@ -1,0 +1,25 @@
+{
+  "name": "discord-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "devstart": "ts-node src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LvckyWorld/Discord-Bot.git"
+  },
+  "keywords": [],
+  "author": "LvckyWorld, Iven (LvckyAPI), Lukas(IloveKOHL)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LvckyWorld/Discord-Bot/issues"
+  },
+  "homepage": "https://github.com/LvckyWorld/Discord-Bot#readme",
+  "dependencies": {
+    "discord.js": "^13.6.0",
+    "ts-node": "^10.5.0"
+  }
+}
