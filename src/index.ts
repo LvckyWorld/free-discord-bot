@@ -52,7 +52,7 @@ bot.on('messageCreate', (message) => {
 });
 
 bot.on('ready', () => {
-    console.log('Bot logged in.');
+    console.log('Bot logged in sucsessfully as ' + bot.user?.username + bot.user?.discriminator);
 })
 
 bot.login(process.env.BOT_TOKEN);
