@@ -24,7 +24,9 @@ import * as fs from 'fs';
 import * as moment from 'moment';
 export const processStartTime = moment(new Date().getTime());
 import * as autoEmbedHandler from './autoembed/autoEmbed';
-                        // CMD,  FILE
+
+import * as welcomeLeaveManager from './welcomeLeaveMessage/welcomeLeaveMessage';
+// CMD,  FILE
 let commandMap = new Map<string, any>();
 
 // Reading Files in commands folder
