@@ -69,7 +69,7 @@ export function syntaxError(rightSyntax: string, message: Message) {
     let embed = new MessageEmbed()
         .setColor('RED')
         .setTitle(`:no_entry: Syntax-Fehler :no_entry:`)
-        .setDescription(`<@${message.author.id}>, Sie verwenden eine falsche Sysntax. Richtige Syntax: \n\`${rightSyntax}\``)
+        .setDescription(`<@${message.author.id}>, \nWrong Syntax.\nYou have to use the command like this: \n\`${botconf.prefix}${rightSyntax}\``)
         .setAuthor({ name: `Request by: ${message.author.username}`, iconURL: (message.author.avatarURL({ dynamic: true }) || botconf.standartPicURL), url: `https://discordapp.com/users/${message.author.id}` })
         .setFooter({ text: ebFooter, iconURL: (picURL || botconf.standartPicURL) })
         .setTimestamp(new Date())
