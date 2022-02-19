@@ -27,7 +27,7 @@ export function error(error: string, message: Message) {
     var picURL = message.guild?.iconURL({ dynamic: true });
     let embed = new MessageEmbed()
         .setColor('RED')
-        .setTitle(`:no_entry: ERROR - FEHLER :no_entry:`)
+        .setTitle(`:no_entry: ERROR :no_entry:`)
         .setDescription(error)
         .setAuthor({ name: `Request by: ${message.author.username}`, iconURL: (message.author.avatarURL({ dynamic: true }) || botconf.standartPicURL), url: `https://discordapp.com/users/${message.author.id}` })
         .setFooter({ text: ebFooter, iconURL: (picURL || botconf.standartPicURL) })
@@ -41,8 +41,8 @@ export function noPerms(neededPerms: string, message: Message) {
     var picURL = message.guild?.iconURL({ dynamic: true });
     let embed = new MessageEmbed()
         .setColor('RED')
-        .setTitle(`:no_entry: FEHLER -NO PERMS :no_entry:`)
-        .setDescription(`<@${message.author.id}>, Sie haben leider keine Berechtigungen. Ihnen fehlt folgendes: \n\`${neededPerms}\``)
+        .setTitle(`:no_entry: ERROR - NO PERMS :no_entry:`)
+        .setDescription(`<@${message.author.id}>, You don't have permission for this. You Need: \n\`${neededPerms}\``)
         .setAuthor({ name: `Request by: ${message.author.username}`, iconURL: (message.author.avatarURL({ dynamic: true }) || botconf.standartPicURL), url: `https://discordapp.com/users/${message.author.id}` })
         .setFooter({ text: ebFooter, iconURL: (picURL || botconf.standartPicURL) })
         .setTimestamp(new Date())
@@ -55,8 +55,8 @@ export function noRole(neededRoleID: string, message: Message) {
     var picURL = message.guild?.iconURL({ dynamic: true });
     let embed = new MessageEmbed()
         .setColor('RED')
-        .setTitle(`:no_entry: NO PERMS :no_entry:`)
-        .setDescription(`<@${message.author.id}>, Sie haben leider keine Berechtigungen. Ihnen fehlt folgendes: \n<@&${neededRoleID}>`)
+        .setTitle(`:no_entry: ERROR - NO PERMS :no_entry:`)
+        .setDescription(`<@${message.author.id}>, You don't have permission for this. You Need: \n<@&${neededRoleID}>`)
         .setAuthor({ name: `Request by: ${message.author.username}`, iconURL: (message.author.avatarURL({ dynamic: true }) || botconf.standartPicURL), url: `https://discordapp.com/users/${message.author.id}` })
         .setFooter({ text: ebFooter, iconURL: (picURL || botconf.standartPicURL) })
         .setTimestamp(new Date())
@@ -68,8 +68,8 @@ export function syntaxError(rightSyntax: string, message: Message) {
     var picURL = message.guild?.iconURL({ dynamic: true });
     let embed = new MessageEmbed()
         .setColor('RED')
-        .setTitle(`:no_entry: Syntax-Fehler :no_entry:`)
-        .setDescription(`<@${message.author.id}>, \nWrong Syntax.\nYou have to use the command like this: \n\`${botconf.prefix}${rightSyntax}\``)
+        .setTitle(`:no_entry: Syntax-Error :no_entry:`)
+        .setDescription(`<@${message.author.id}>, \n\nYou have to use the command like this:\n\`${botconf.prefix}${rightSyntax}\``)
         .setAuthor({ name: `Request by: ${message.author.username}`, iconURL: (message.author.avatarURL({ dynamic: true }) || botconf.standartPicURL), url: `https://discordapp.com/users/${message.author.id}` })
         .setFooter({ text: ebFooter, iconURL: (picURL || botconf.standartPicURL) })
         .setTimestamp(new Date())
