@@ -39,8 +39,6 @@ export async function execute(message: Discord.Message, args: string[], bot: Dis
 
         // send DM to kickned Player
         await message.guild?.members.fetch(id).then((member) => {
-            console.log(id);
-
             member.send({
                 embeds: [embedHandler.standardEmbed(
                     '💥 BAN-SYSTEM 💥',
