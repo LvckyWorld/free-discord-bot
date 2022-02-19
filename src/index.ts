@@ -22,6 +22,7 @@ import * as botconfig from './configs/botconfig.json';
 import * as fs from 'fs';
 import * as moment from 'moment';
 export const processStartTime = moment(new Date().getTime());
+import * as autoEmbedHandler from './autoembed/autoEmbed';
                         // CMD,  FILE
 let commandMap = new Map<string, any>();
 
@@ -40,11 +41,13 @@ fs.readdir('./src/commands/', (err, files) => {
 });
 
 bot.on('messageCreate', (message) => {
+    autoEmbedHandler.autoEmbed(message);
     commandMap.forEach((commandFile, commandName) => {
         if (message.content.startsWith(`${botconfig.prefix + commandName}`)) {
             commandFile.execute(message, bot);
         }
     });
+
 });
 
 bot.on('ready', () => {
