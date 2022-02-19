@@ -20,6 +20,7 @@
   "homepage": "https://github.com/LvckyWorld/Discord-Bot#readme",
   "dependencies": {
     "discord.js": "^13.6.0",
+    "moment": "^2.29.1",
     "ts-node": "^10.5.0"
   }
 }

@@ -20,6 +20,8 @@ export const bot = new Discord.Client({
 });
 import * as botconfig from './configs/botconfig.json';
 import * as fs from 'fs';
+import * as moment from 'moment';
+export const processStartTime = moment(new Date().getTime());
                         // CMD,  FILE
 let commandMap = new Map<string, any>();
 
