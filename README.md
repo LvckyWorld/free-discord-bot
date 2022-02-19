@@ -18,3 +18,30 @@ The content in ".env" file:
 BOT_TOKEN = token
 
 ```
+
+## Restful API
+The API uses urlencoded.
+
+You have to set the verify header in the Config first.
+
+If you done that you can set the verify header in your POST request.
+
+Actions
+- changeusername
+- banuser
+
+
+### changeusername
+Body
+- action => changeusername
+- name   => [NEWUSERNAME]
+
+![image](https://user-images.githubusercontent.com/54581078/154807834-cceaad0a-31ea-4483-a1be-75c42814254b.png)
+
+### banuser
+Body
+- action => banuser
+- id     => [USERID]
+- reason => [REASON]
+
+![image](https://user-images.githubusercontent.com/54581078/154807969-0e16e8b6-c1db-4f4e-8eea-d11e5498c882.png)
