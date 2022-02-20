@@ -5,6 +5,9 @@ import * as banHandler from './banuser/banuser';
 import * as changeUserNameHandler from './changeusername/changeusername';
 import * as changeAvatarHandler from './changeavatar/changeavatar';
 import * as fs from 'fs';
+import * as adminsConfig from './admins.json';
+import * as crypto from 'crypto';
+
 const app = express();
 app.use(express.urlencoded({ extended: true }));
 
@@ -66,6 +69,23 @@ export function startWebPanel() {
             res.header('X-Powered-By', 'LvckyWorld.net');
             res.send(data);
         });
+    });
+    app.post("/changepw", (req, res) => {
+        res.header('X-Powered-By', 'LvckyWorld.net');
+        if (req.body.newpassword != (undefined || null)) {
+            if (req.body.discordid != (undefined || null)) {
+                adminsConfig.forEach(admin => {
+                    if (admin.discordID == req.body.discordid) {
+                        admin.password = crypto.createHash('sha256').update(req.body.newpassword).digest('hex');
+                        fs.writeFile(__dirname + '/admins.json', JSON.stringify(adminsConfig), (err) => {
+                            if (err) return;
+                        });
+                        res.send("Password changed!");
+                        return;
+                    }
+                })
+            }
+        }
     });
 
 
