@@ -41,7 +41,6 @@ export function startWebPanel() {
                 res.status(409).send("You have to choose a correct action. Now we have a CONFLICT!")
                 break;
         }
-
     });
 
     app.get("/userlist", (req, res) => {
