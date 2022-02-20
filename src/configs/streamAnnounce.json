@@ -1,0 +1,6 @@
+{
+    "enabled": true,
+    "streamer_roles": ["789163615755436099"],
+    "channels": ["789163616754073642"],
+    "message": "$mention is now live. Go check it out!\n$streamurl"
+}

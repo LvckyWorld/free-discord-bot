@@ -20,11 +20,13 @@ export const bot = new Discord.Client({
     ],
 });
 import * as botconfig from './configs/botconfig.json';
+import * as streamannounceconf from './configs/streamAnnounce.json';
 import * as fs from 'fs';
 import * as moment from 'moment';
 export const processStartTime = moment(new Date().getTime());
 import * as autoEmbedHandler from './autoembed/autoEmbed';
 import * as welcomeLeaveManager from './welcomeLeaveMessage/welcomeLeaveMessage';
+import * as streamAnnouncer from './util/streamAnnounce'
 import * as webPanel from './webPanel/webPanel';
 // CMD,  FILE
 let commandMap = new Map<string, any>();
@@ -50,7 +52,7 @@ bot.on('messageCreate', (message) => {
             let messageArray = message.content.split(" ");
             let cmd = messageArray[0].toLowerCase();
             let args = messageArray.slice(1);
-            
+
             commandFile.execute(message, args, bot);
         }
     });
@@ -63,8 +65,15 @@ bot.on('guildMemberRemove', (member) => {
     welcomeLeaveManager.leaveMessage(member);
 });
 
+if (streamannounceconf) {
+    bot.on('presenceUpdate', async (oldPresence, newPresence) => {
+        streamAnnouncer.sendAnnounce(oldPresence, newPresence);
+    })
+}
+
+
 bot.on('ready', () => {
-    console.log('Bot logged in succsessfully as ' + bot.user?.username + '#' +  bot.user?.discriminator);
+    console.log('Bot logged in succsessfully as ' + bot.user?.username + '#' + bot.user?.discriminator);
     webPanel.startWebPanel();
 })
 
