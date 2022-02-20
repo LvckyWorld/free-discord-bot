@@ -16,7 +16,6 @@ export async function sendAnnounce(oldPresence: Discord.Presence | null, newPres
 
 
                         let activity: any;
-                        if (userID != "447285957004099584") return;
                         newPresence.activities.map(activity1 => {
                             activity = activity1;
                         })
