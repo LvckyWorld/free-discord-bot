@@ -13,7 +13,7 @@ app.use(express.urlencoded({ extended: true }));
 
 let ipArray: string[] = [];
 
-export function startWebPanel() {
+export async function startWebPanel() {
     app.post('/', (req, res) => {
         res.header('X-Powered-By', 'LvckyWorld.net');
 
