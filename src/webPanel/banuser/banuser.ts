@@ -14,7 +14,7 @@ export async function banUser(req: express.Request, res: express.Response) {
                     let embed = new Discord.MessageEmbed()
                         .setColor('RED')
                         .setTitle('💥 BAN-SYSTEM 💥')
-                        .setDescription(`Your banned from the Server \n Reason: ${reason}`)
+                        .setDescription(`Your banned from the Server ${guild?.name}\n\n Reason: \`${reason}\``,)
                         .setAuthor({ name: `Request by: Webpanel`, iconURL: (botconf.standartPicURL) })
                         .setFooter({ text: embedHandler.getFooter() })
                         .setTimestamp(new Date())
