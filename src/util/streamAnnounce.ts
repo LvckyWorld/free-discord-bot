@@ -28,7 +28,7 @@ export async function sendAnnounce(oldPresence: Discord.Presence | null, newPres
                             if (!member?.roles.cache.has(roleid)) return;
                             let plattForm = activity.name;
                             let url = activity.url;
-                            //if (url === (undefined || null)) return;
+                            if (url === (undefined || null)) return;
                             streamerMap.push(userID);
                             deleteUserFromMap(userID);
 
