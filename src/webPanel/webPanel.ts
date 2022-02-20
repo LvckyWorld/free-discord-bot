@@ -45,7 +45,6 @@ export function startWebPanel() {
     });
 
     app.get("/userlist", (req, res) => {
-
         let json: { id: string; name: string; tag: string; avatarURL: string | null; }[] = [];
         res.header('X-Powered-By', 'LvckyWorld.net');
         index.bot.guilds.cache.forEach(guild => {
@@ -73,5 +72,5 @@ export function startWebPanel() {
 
     app.listen(webPanelConfig.port);
     console.log('The Websocket started succsessfullly. It listen on port: ' + webPanelConfig.port);
-    
+
 }

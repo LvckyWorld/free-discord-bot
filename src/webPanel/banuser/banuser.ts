@@ -17,12 +17,12 @@ export function banUser(req: express.Request, res: express.Response) {
                         .setAuthor({ name: `Request by: Webpanel`, iconURL: (botconf.standartPicURL) })
                         .setFooter(embedHandler.getFooter())
                         .setTimestamp(new Date())
-                        .setThumbnail((guild.iconURL({dynamic: true}) || botconf.standartPicURL));    
+                        .setThumbnail((guild.iconURL({ dynamic: true }) || botconf.standartPicURL));
                     member.send({
-                            embeds: [embed]
-                        }).catch((err) => { })
+                        embeds: [embed]
+                    }).catch((err) => { })
                 }).catch((err) => { })
-                guild.members.ban(req.body.id, {reason: req.body.reason}).then(() => {
+                guild.members.ban(req.body.id, { reason: req.body.reason }).then(() => {
                     res.send({
                         status: 'success',
                         message: 'User banned successfully for "' + req.body.reason + '"'
@@ -43,12 +43,12 @@ export function banUser(req: express.Request, res: express.Response) {
                         .setAuthor({ name: `Request by: Webpanel`, iconURL: (botconf.standartPicURL) })
                         .setFooter(embedHandler.getFooter())
                         .setTimestamp(new Date())
-                        .setThumbnail((guild.iconURL({dynamic: true}) || botconf.standartPicURL));    
+                        .setThumbnail((guild.iconURL({ dynamic: true }) || botconf.standartPicURL));
                     member.send({
-                            embeds: [embed]
-                        }).catch((err) => { })
+                        embeds: [embed]
+                    }).catch((err) => { })
                 }).catch((err) => { })
-                guild.members.ban(req.body.id, {reason: req.body.reason}).then(() => {
+                guild.members.ban(req.body.id, { reason: req.body.reason }).then(() => {
                     res.send({
                         status: 'success',
                         message: 'User banned successfully for no reason'
