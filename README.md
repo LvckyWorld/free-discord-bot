@@ -45,3 +45,20 @@ Body
 - reason => [REASON]
 
 ![image](https://user-images.githubusercontent.com/54581078/154807969-0e16e8b6-c1db-4f4e-8eea-d11e5498c882.png)
+
+## Example Panel
+We created a [Web panel](https://github.com/LvckyWorld/free-discord-bot-webpanel) in PHP you can use und learn how to use the API.
+You just have to set the config.json right:
+```json
+{
+    "serverIP": "127.0.0.1",
+    "port": "3000",
+    "verifyHeader": "12345"
+}
+```
+
+![image](https://user-images.githubusercontent.com/54581078/154838874-dcf611dd-d295-4da3-af9d-830818e7b9a8.png) 
+![image](https://user-images.githubusercontent.com/54581078/154838888-8e5acdf9-8a7c-43ce-be09-e7f838f2b918.png)
+
+![image](https://user-images.githubusercontent.com/54581078/154838926-3bdf84c5-ae1b-4890-a7e7-06c29430d586.png)
+
