@@ -18,6 +18,8 @@ The content in ".env" file:
 BOT_TOKEN = token
 
 ```
+## Commands
+![image](https://user-images.githubusercontent.com/54581078/154839019-8e8ff64f-f3f6-42c3-a2a4-470d79b084af.png)
 
 ## Restful API
 The API uses urlencoded.
