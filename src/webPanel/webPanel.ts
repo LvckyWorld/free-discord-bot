@@ -20,9 +20,9 @@ export function startWebPanel() {
             return res.status(403).send("Your IP is banned!");
         }
 
-        if (req.headers['verify'] != webPanelConfig.verifyHeader) {
+        if (String(req.headers['verify']) != String(webPanelConfig.verifyHeader)) {
             ipArray.push(req.ip);
-
+            
             res.status(403).send("You are not allowed to access this page! If you try this again, you will be banned from this API for 1 day!");
             return;
         }
