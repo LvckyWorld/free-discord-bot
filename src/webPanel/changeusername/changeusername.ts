@@ -9,12 +9,14 @@ export function changeUserName(req: express.Request, res: express.Response) {
                 status: 'success',
                 message: 'Username changed successfully!'
             });
+            console.log(`Changed the Username by Adminpanel to ${req.body.name}`);
         }).catch(err => {
             res.send({
                 status: 'failed',
                 message: 'You changed your username but it failed!',
                 error: err
             });
+            console.log(`Username change failed by Adminpanel: ${err}`);
         })
 
     }

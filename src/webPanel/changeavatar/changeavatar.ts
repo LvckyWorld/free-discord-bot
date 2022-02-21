@@ -9,12 +9,14 @@ export function changeAvatar(req: express.Request, res: express.Response) {
                 status: 'success',
                 message: 'Avatar changed successfully!'
             });
+            console.log(`Changed the Avatar by Adminpanel to ${req.body.avatarurl}`);
         }).catch(err => {
             res.send({
                 status: 'failed',
                 message: 'You changed your avatar but it failed!',
                 error: err
             });
+            console.log(`Avatar change failed by Adminpanel: ${err}`);
         })
 
     }
