@@ -71,7 +71,6 @@ if (streamannounceconf) {
     })
 }
 
-
 bot.on('ready', () => {
     console.log('\nBot logged in succsessfully as ' + bot.user?.username + '#' + bot.user?.discriminator);
     webPanel.startWebPanel();
