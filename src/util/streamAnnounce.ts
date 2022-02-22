@@ -12,7 +12,6 @@ export async function sendAnnounce(oldPresence: Discord.Presence | null, newPres
                 if (oldPresence?.guild?.roles.cache.map(role => { role.id == roleid })) {
                     let userID = newPresence.userId;
                     let member = newPresence.guild.members.cache.get(userID);
-                    var channels = streamannounceconf.channels.forEach(id => {
 
 
                         let activity: any;
@@ -43,7 +42,6 @@ export async function sendAnnounce(oldPresence: Discord.Presence | null, newPres
                                 });
                             })
                         }
-                    })
                 }
             }
         })
