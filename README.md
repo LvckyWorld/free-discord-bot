@@ -4,6 +4,15 @@
 This Bot is full moudlar.
 You can use the configuration files to set everything up to suit you and your project.
 
+
+#### Contents:
+- [Before yu can start the Bot](#before-you-can-start-the-bot)
+- [Commands](#commands)
+- [Extend the bot](#extend-the-bot)
+- [Restful API](#restful-api)
+- [Example Panel](#example-panel)
+
+
 ## Before you can start the Bot
 
 First you have to install [NodeJS](https://nodejs.org/) with the version 16.
