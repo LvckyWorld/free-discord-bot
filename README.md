@@ -18,6 +18,13 @@ The content in ".env" file:
 BOT_TOKEN = token
 
 ```
+
+If you want to disable modules, simply write `--` in front of the file like this.
+
+![image](https://user-images.githubusercontent.com/47639297/155397964-aa425512-5d3d-4dbc-a78a-601a736ac3ec.png)
+
+Then the module is no longer loaded.
+
 ## Commands
 ![image](https://user-images.githubusercontent.com/54581078/154839019-8e8ff64f-f3f6-42c3-a2a4-470d79b084af.png)
 
