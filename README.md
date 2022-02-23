@@ -6,7 +6,7 @@ You can use the configuration files to set everything up to suit you and your pr
 
 
 #### Contents:
-- [Before yu can start the Bot](#before-you-can-start-the-bot)
+- [Before you can start the Bot](#before-you-can-start-the-bot)
 - [Commands](#commands)
 - [Extend the bot](#extend-the-bot)
 - [Restful API](#restful-api)
