@@ -36,6 +36,7 @@ fs.readdir('./src/commands/', (err, files) => {
     if (err) console.error(err);
     files.forEach(file => {
         if (!file.endsWith('.ts')) return;
+        if (file.startsWith('--')) return;
         const commandName = file.split('.')[0];
         // importing file
         const command = require(`./commands/${file}`);
