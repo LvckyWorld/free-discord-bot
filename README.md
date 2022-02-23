@@ -52,7 +52,7 @@ ping.ts = prefix+ping
 */
 
 import * as Discord from 'discord.js';
-export function execute(message: Discord.Message, bot: Discord.Client) {
+export async function execute(message: Discord.Message, args: string[], bot: Discord.Client) {
     
     // command
     if (message.member.permission.has("ADMINISTRATOR")) {
