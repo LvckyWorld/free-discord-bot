@@ -28,6 +28,31 @@ Then the module is no longer loaded.
 ## Commands
 ![image](https://user-images.githubusercontent.com/54581078/154839019-8e8ff64f-f3f6-42c3-a2a4-470d79b084af.png)
 
+
+## Extend the bot
+If you would like to create new command, we have a very simple instruction for you.
+In the folder `commands`, you simply have to create a new file. In this file you have to put some code.
+We give you a simple code example:
+
+Filename: `ping.ts` 
+```ts
+
+/*
+The new commandname is the name of the file without `.ts`.
+ping.ts = prefix+ping
+*/
+
+import * as Discord from 'discord.js';
+export function execute(message: Discord.Message, bot: Discord.Client) {
+    
+    // command
+    if (message.member.permission.has("ADMINISTRATOR")) {
+        message.reply("Pong")
+    }
+    
+}
+```
+
 ## Restful API
 The API uses urlencoded.
 
