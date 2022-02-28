@@ -22,6 +22,8 @@ ${p}timeout - Set a User in Timeout
 ${p}cc - A simple chat clear command
 ${p}status - Print the Status of the Bot
 
+${p}adduser - Add a User for Adminpanel
+
 You need help or have any Questions?
 https://lvckyworld.net
 `,
