@@ -28,6 +28,8 @@ BOT_TOKEN = token
 
 ```
 
+Then you write in the prompt the command `ts-node src/index.ts`
+
 If you want to disable modules, simply write `--` in front of the file like this.
 
 ![image](https://user-images.githubusercontent.com/47639297/155397964-aa425512-5d3d-4dbc-a78a-601a736ac3ec.png)
