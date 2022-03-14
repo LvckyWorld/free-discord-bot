@@ -57,8 +57,8 @@ bot.on('messageCreate', (message) => {
             commandFile.execute(message, args, bot);
         }
     });
-
 });
+
 bot.on('guildMemberAdd', (member) => {
     welcomeLeaveManager.welcomeMessage(member);
 })
