@@ -17,7 +17,10 @@ You can use the configuration files to set everything up to suit you and your pr
 
 First you have to install [NodeJS](https://nodejs.org/) with the version 16.
 Now you have to open an command prompt and write the command `npm i`.
-Then npm download all required packages for you. Further you have to run this command: `npm i -g ts-node typescript`
+Then npm download all required packages for you. Further you have to run this command: 
+```
+npm i -g ts-node typescript
+```
 If this is done, you have to configurate your bot and the BotToken.
 
 
