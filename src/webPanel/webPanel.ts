@@ -19,7 +19,6 @@ app.use(express.urlencoded({ extended: true }));
 let ipArray: string[] = [];
 
 export async function startWebPanel() {
-    app.use(limiter);
 
     app.post('/', (req, res) => {
         res.header('X-Powered-By', 'LvckyWorld.net');
@@ -70,6 +69,8 @@ export async function startWebPanel() {
 
         res.send(JSON.stringify(json));
     });
+
+    app.use(limiter);
     app.get("/admins", (req, res) => {
         fs.readFile(__dirname + '/admins.json', (err, data) => {
             if (err) return;
@@ -77,6 +78,7 @@ export async function startWebPanel() {
             res.send(data);
         });
     });
+
     app.post("/changepw", (req, res) => {
         res.header('X-Powered-By', 'LvckyWorld.net');
         if (req.body.newpassword != (undefined || null)) {
