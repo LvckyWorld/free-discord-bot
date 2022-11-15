@@ -7,6 +7,11 @@ import * as changeAvatarHandler from './changeavatar/changeavatar';
 import * as fs from 'fs';
 import * as adminsConfig from './admins.json';
 import * as crypto from 'crypto';
+import * as ratelimiter from 'express-rate-limit';
+const limiter = ratelimiter.rateLimit({
+    windowMs: 15 * 60 * 1000,
+    max: 100 
+});
 
 const app = express();
 app.use(express.urlencoded({ extended: true }));
@@ -14,6 +19,8 @@ app.use(express.urlencoded({ extended: true }));
 let ipArray: string[] = [];
 
 export async function startWebPanel() {
+    app.use(limiter);
+
     app.post('/', (req, res) => {
         res.header('X-Powered-By', 'LvckyWorld.net');
 
