@@ -1,7 +1,7 @@
 # TypeScript Discord Bot
 
 
-This Bot is full moudlar.
+This Bot is full modular.
 You can use the configuration files to set everything up to suit you and your project.
 
 
